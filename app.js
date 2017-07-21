@@ -1,10 +1,20 @@
 require('dotenv').config()
 const express = require('express');
 const axios = require('axios');
+const ejs = require('ejs');
+
+ejs.delimiter = '?';
 
 const app = express();
 const KEY = process.env.API_KEY;
 const PORT = process.env.PORT;
+
+app.set('view engine', 'ejs');
+app.use(express.static('public'));
+
+app.get('/', (req, res) => {
+	res.render('home');
+});
 
 app.get('/:coordinates', (req, res) => {
 	var coord = req.params.coordinates.split(',');
@@ -20,6 +30,10 @@ app.get('/:coordinates', (req, res) => {
 			console.log('Error');
 			res.send(err);
 		});
+});
+
+app.get('*', (req, res) => {
+	res.redirect('https://philzona.net')
 });
 
 app.listen(PORT, () => {
