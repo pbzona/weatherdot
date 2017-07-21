@@ -1,0 +1,25 @@
+{
+  "name": "weatherdot",
+  "version": "1.0.0",
+  "description": "A custom API router for making DarkSky calls to my own server",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pbzona/weatherdot.git"
+  },
+  "author": "Phil Zona",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pbzona/weatherdot/issues"
+  },
+  "homepage": "https://github.com/pbzona/weatherdot#readme",
+  "dependencies": {
+    "axios": "^0.16.2",
+    "dotenv": "^4.0.0",
+    "express": "^4.15.3"
+  }
+}
