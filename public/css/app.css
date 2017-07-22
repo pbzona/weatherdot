@@ -1,23 +1,46 @@
+/*sienna: #B25C3A
+darkslategray: #3C505D
+lightslategray: #B8C2C9
+lightsteelblue: #92A4B1
+darkgray: #1E2228*/
+
+html {
+	font-size: 62.5%;
+}
+
 body {
-	background-color: #333;
+	background-color: #1E2228;
+	padding: 0;
+}
+
+.container-fluid {
+	padding: 0;
+	margin: 0;
+	width: 100%;
 }
 
 h1, h2 {
-	color: #333;
+	color: #1E2228;
 	font-family: 'Permanent Marker', cursive;
 }
 
 h1 {
-	font-size: 60px;
-	margin-top: 80px;
+	font-size: 6rem;
+	margin-top: 8rem;
 }
 
 a:hover {
 	text-decoration: none;
 }
 
+hr {
+	background-color: #B25C3A;
+	height: 0.4rem;
+	width: 70%;
+}
+
 p {
-	margin: 30px 0;
+	margin-bottom: 2rem;
 }
 
 img {
@@ -25,30 +48,50 @@ img {
 }
 
 small {
-	color: #ddd;
-	margin-top: 30px;
+	color: #B8C2C9;
+	margin-top: 3rem;
 }
 
 .section {
-	height: 450px;
+	height: 45rem;
 	margin: 0;
 	padding: 0;
 	width: 100%;
 }
 
+.btn, .btn-default {
+	background-color: #B25C3A;
+	border-color: #7F2907;
+	margin-top: 30px;
+	color: #ddd;
+}
+
+.btn:hover {
+	background-color: #994321;
+	border-color: #7F2907;
+	color: #ddd;
+}
+
 #top-section {
-	background: url('/images/weather.jpg') no-repeat fixed center;
+	background: url('/images/weather-2.jpg') no-repeat fixed center;
 	background-size: cover;
-	background-position: 0 -350px;
+	background-position: 0 -20rem;
 }
 
 #content-first {
-	color: #ddd;
+	color: #B8C2C9;
 	height: auto;
 }
 
 #footer-section {
 	display: block;
-	height: 100px;
+	height: 10rem;
+	padding: 2rem;
 	text-align: center;
+}
+
+#attribution {
+	height: 8rem;
+	margin-top: 2rem;
+	width: auto;
 }
