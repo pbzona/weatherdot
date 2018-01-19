@@ -33,7 +33,7 @@ app.get('/:coordinates', (req, res) => {
 });
 
 app.get('*', (req, res) => {
-	res.redirect('https://phizon.io')
+	res.redirect('https://blog.phizon.io')
 });
 
 app.listen(PORT, () => {
