@@ -2,19 +2,19 @@ require('dotenv').config();
 const path = require('path');
 const express = require('express');
 const axios = require('axios');
-const ejs = require('ejs');
-
-ejs.delimiter = '?';
+const mustacheExpress = require('mustache-express');
 
 const app = express();
 const KEY = process.env.API_KEY;
 const PORT = process.env.PORT;
 
-app.set('view engine', 'ejs');
+app.engine('mustache', mustacheExpress());
+app.set('view engine', 'mustache');
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', (req, res) => {
-	res.render('home');
+	data = {header: 'Hello!!!'};
+	res.render('home', data);
 });
 
 app.get('/:coordinates', (req, res) => {
