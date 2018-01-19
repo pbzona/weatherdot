@@ -1,4 +1,5 @@
-require('dotenv').config()
+require('dotenv').config();
+const path = require('path');
 const express = require('express');
 const axios = require('axios');
 const ejs = require('ejs');
@@ -10,7 +11,7 @@ const KEY = process.env.API_KEY;
 const PORT = process.env.PORT;
 
 app.set('view engine', 'ejs');
-app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', (req, res) => {
 	res.render('home');
@@ -22,11 +23,11 @@ app.get('/:coordinates', (req, res) => {
 	var lng = parseInt(coord[1]);
 
 	axios.get(`https://api.darksky.net/forecast/${KEY}/${lat},${lng}`)
-		.then((weather) => {
+		.then(weather => {
 			console.log('Weather received');
 			res.send(weather.data)
 		})
-		.catch((err) => {
+		.catch(err => {
 			console.log('Error');
 			res.send(err);
 		});
