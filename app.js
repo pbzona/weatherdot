@@ -13,8 +13,7 @@ app.set('view engine', 'mustache');
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', (req, res) => {
-	data = {header: 'Hello!!!'};
-	res.render('home', data);
+	res.render('home');
 });
 
 app.get('/:coordinates', (req, res) => {
