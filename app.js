@@ -24,7 +24,7 @@ app.get('/:coordinates', (req, res) => {
 	axios.get(`https://api.darksky.net/forecast/${KEY}/${lat},${lng}`)
 		.then(weather => {
 			console.log('Weather received');
-			res.send(weather.data)
+			res.send(weather.data);
 		})
 		.catch(err => {
 			console.log('Error');
@@ -33,9 +33,9 @@ app.get('/:coordinates', (req, res) => {
 });
 
 app.get('*', (req, res) => {
-	res.redirect('https://blog.phizon.io')
+	res.redirect('https://blog.phizon.io');
 });
 
 app.listen(PORT, () => {
-	console.log(`Listening on port ${PORT}...`)
+	console.log(`Listening on port ${PORT}...`);
 });
